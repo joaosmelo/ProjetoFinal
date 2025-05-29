@@ -1,1 +1,66 @@
+Problemas principais: reservas de quartos, acesso para limpeza, acesso à
+área VIP, serviços de quarto e controle de estacionamento:
+1. Reserva de Quartos: Apenas quartos limpos e não ocupados podem ser reservados.
+A reserva só é possível se o quarto estiver limpo e desocupado.
+2. Acesso para Limpeza: Funcionários podem acessar quartos para limpeza apenas se
+esses quartos não estiverem ocupados.
+3. Acesso à área VIP: Hóspedes VIP têm acesso à área VIP se a estadia deles for
+superior a três dias.
+4. Serviços de Quarto: Apenas os quartos ocupados podem solicitar serviços de
+quarto. O pedido de serviço é registrado apenas quando o quarto está em uso.
+5. Controle de Estacionamento: Somente veículos de hóspedes e funcionários
+registrados podem acessar o estacionamento. Além disso, o sistema monitora o
+número de vagas disponíveis em tempo real.
 
+##
+RESOLUÇÃO:
+
+Reserva de Quartos:
+∀x(Reserva(x) —>(Q(x)∧~O(x)))
+● Reserva(x) indica que o quarto x está sendo reservado.
+● Q(x) significa que o quarto está limpo.
+● O(x) significa que o quarto está ocupado.
+● ~O(x) significa que o quarto não está ocupado.
+
+CASO O RESULTADO DESSA EQUAÇÃO SEJA ’’V’’ SEGUIMOS:
+
+##
+Acesso para Limpeza:
+∀x(A(x)--->~O(x))
+● A(x) significa que o funcionário pode acessar o quarto x para limpeza.
+● O(x) significa que o quarto está ocupado.
+
+CASO O RESULTADO DESSA EQUAÇÃO SEJA ’’V’’ SEGUIMOS:
+
+##
+Acesso à área VIP
+∀h(VIP(h)∧Estadia(h,d) ---> d > 3 —>AcessoVIP(h))
+● VIP(h) significa que o hóspede h é VIP.
+● Estadia(h,d) significa que a estadia de h tem duração ddd dias.
+● AcessoVIP(h) significa que o hóspede h tem acesso a área VIP.
+
+CASO O RESULTADO DESSA EQUAÇÃO SEJA ’’V’’ SEGUIMOS:
+
+##
+Serviços de Quarto:
+∀x(Serviço(x)--->O(x))
+● Serviço(x) significa que o quarto x solicitou serviço de quarto.
+● O(x) significa que o quarto x está ocupado.
+
+CASO O RESULTADO DESSA EQUAÇÃO SEJA ’’V’’ SEGUIMOS:
+
+##
+Controle de Estacionamento:
+
+]V⊆H∪F
+● V é o conjunto de veículos autorizados a estacionar.
+● H é o conjunto de hóspedes registrados.
+● F é o conjunto de funcionários registrados.
+● H∪F é a união dos conjuntos de hóspedes e funcionários registrados.
+Além disso, o número de vagas disponíveis pode ser monitorado pela diferença entre o total
+de vagas T e o número de veículos estacionados V:
+Vagas Disponíveis = T − ∣V∣
+● T é o número total de vagas de estacionamento.
+● ∣V∣ é o número de veículos estacionados.
+
+FINAL.

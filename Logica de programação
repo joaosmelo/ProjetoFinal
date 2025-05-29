@@ -1,1 +1,39 @@
+lista=[]
+ct = 0
+print('digite [0] para encerrar!')
+
+while True:
+    valores = int(input('Digite um valor: '))
+    if valores == 0:
+        break
+    lista.append(valores)
+    if valores >= 10:
+        ct += 1
+
+print("Lista horizontal:", lista)
+for i in lista:
+    print(i)
+
+print('A quantidade de itens é:', len(lista))
+print('A soma dos valores é:', sum(lista))
+print('O maior valor é:', max(lista))
+print('O menor valor é :', min(lista))
+
+procura = int(input('qual valor você procura?'))
+if procura in lista:
+    print("O valor esta na posição:")
+    print(lista.index(procura))
+    print("O valor está na lista")
+else:
+    print("O valor não está na lista")
+(lista.sort(reverse=False))
+print(lista)
+(lista.insert(1,33))
+print(lista)
+(lista.sort(reverse=True))
+print(lista)
+media = sum(lista)/len(lista)
+print(f"A media é:{media:.3f}")
+porcentagem = ((ct+1)/len(lista))*100
+print(f"A porcentagem é:{porcentagem: .2f}", "%")
 

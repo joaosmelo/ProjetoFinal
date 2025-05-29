@@ -1,1 +1,13 @@
-
+ MOV AL,77    D0 00 77
+ MOV BL,88    D0 01 88
+ MOV CL,11    D0 02 11
+ MOV DL,EE    D0 03 EE
+ OR DL,CL     D1 03 02
+ XOR DL,DF    D2 03 DF
+ AND AL,BL    D3 00 01
+ NOT BL       D4 01
+ NOT AL       D4 00
+ PUSH DL      D5 03
+ PUSH AL      D5 00
+ PUSH BL      D5 01
+ END          FF

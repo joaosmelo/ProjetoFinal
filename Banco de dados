@@ -1,1 +1,49 @@
+PROJETO: Tabela de compras e serviços
+
+create database suporte;
+USE suporte; 
+create table servicos (
+	codServico	INT primary key,
+    descricao varchar(100),
+    valorUNIT float not null, 
+    tempo int
+    );
+insert into servicos( codServico, descricao, valorUNIT, tempo)
+values(1,'azul', 9.99 , 10 );  
+
+create table cliente (
+	codCliente	INT primary key,
+    nome varchar (50),
+    fone varchar (15),
+    endereco varchar (150),
+    email varchar (100)
+    );
+insert into cliente( codCliente, nome, fone, endereco, email)
+values(1,'pedro', '61999999999' , 'ceub' , 'wwwwww@gmail.com'); 
+
+create table pedido (
+	num	INT primary key,
+    dt date,
+    atentido boolean default false,
+    obs varchar (100)
+    );
+insert into pedido ( num, dt, atendido, obs)
+values(8 , '2025-02-12' , false , 'bom');  
+
+create table itemServico (
+	NR	INT primary key,
+    quantidade varchar(100),
+    desconto decimal,
+    valor float,
+    codServico int not null,
+    num int not null,
+    foreign key (codServico) references pedido(codServico) on delete cascade,
+	foreign key (num)references servicos(num) on delete cascade
+    );
+insert into itemServico( Nr, quantidade, desconto, valor, codServico, num)
+values(1,'11', 0.10 , 100, 1, 1 ); 
+select * from itemSercivo;
+
+##
+
 
